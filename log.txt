@@ -1,0 +1,131 @@
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js my-tweets
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song Perfect 
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Perfect
+Artist: Ed Sheeran
+Album: ÷ (Deluxe)
+Preview Here: https://p.scdn.co/mp3-preview/9779493d90a47f29e4257aa45bc6146d1ee9cb26?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: node liri.js movie-this the lion king 
+
+LIRI Response:
+
+------------------------
+Movie Information:
+------------------------
+
+Movie Title: The Lion King
+Year Released: 24 Jun 1994
+IMBD Rating: 8.5
+Country Produced: USA
+Language: English, Swahili, Xhosa, Zulu
+Plot: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+Actors: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+
+User Command: node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song "I Want it That Way"
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: I Want It That Way
+Artist: Backstreet Boys
+Album: The Hits--Chapter One
+Preview Here: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song "Stand By You"
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Stand By You
+Artist: Rachel Platten
+Album: Wildfire
+Preview Here: https://p.scdn.co/mp3-preview/42ae0e6a35961e8655bf78bd432d96ebf1d5e84d?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
