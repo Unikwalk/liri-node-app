@@ -33,8 +33,11 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 * The album that the song is from
 * If no song is provided then the program will default to "The Sign" by Ace of Base.
 
+With a Song Title
 ![spotify-this-song](spotify-this-song.JPG)
 
+Without a Song Title
+![spotify-this-song2](spotify-this-song2.JPG)
 
 #### Movie
 
@@ -50,8 +53,11 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 * Actors in the movie.
 * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
-![movie-thi](movie-this.JPG)
+With a Movie Title
+![movie-this](movie-this.JPG)
 
+Without a Movie Title
+![movie-this2](movie-this2.JPG)
 
 #### Do-What-It-Says
 
