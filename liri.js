@@ -1,16 +1,16 @@
 // Load Required Node Modules
 require('dotenv').config();
-// var keys = require('./keys.js');
+// var keys = require('keys.js');
 var Spotify = require('node-spotify-api');
 // var spotify = new Spotify(keys.spotify);
 var spotify = new Spotify({
-  id: 'b862cb200bd24d5884cea0e170455b1d',
-  secret: 'f697c4bda4834df6b523f9dfd89291d0'
+	id: 'b862cb200bd24d5884cea0e170455b1d',
+	secret: 'f697c4bda4834df6b523f9dfd89291d0'
 });
+var bandsintown = require('bandsintown')('codingbootcamp')
 var request = require('request');
-var fs = require('fs');
-var axios = require('axios');
-
+var moment = require ('moment');
+var fs = require('fs');//file system module
 var cmdArgs = process.argv;
 
 // The LIRI command will always be the second command line argument
@@ -22,20 +22,64 @@ for (var i = 3; i < cmdArgs.length; i++) {
 	liriArg += cmdArgs[i] + ' ';
 }
 
-function concertThis(band){
+function concertThis(band) {
 	// Append the command to the log file
 	fs.appendFile('./log.txt', 'User Command: node liri.js concert-this ' + band + '\n\n', (err) => {
 		if (err) throw err;
 	});
-	
+
 	// Construct the query string
-	var queryStr = "https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp";
-	axios.get(queryStr).then(
-		function(response) {
-			console.log(response);
+	var queryURL = "https://bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp";
+	request(queryURL, function (error, response, body) {
+		//If no error and response is a success
+		if (!error && response.statusCode === 200) {
+			var data = JSON.parse(body);//Parse the json response
+			for (var i = 0; i < data.length; i++) {//Loop through array
+				console.log("Venue: " + data[i].venue.name);//Get venue name
+				//Append data to log.txt
+				fs.appendFileSync("log.txt", "Venue: " + data[i].venue.name + "\n", function (error) {
+					if (error) {
+						console.log(error);
+					};
+				});
+
+				//Get venue location
+				//If statement for concerts without a region
+				if (data[i].venue.region == "") {
+					console.log("Location: " + data[i].venue.city + ", " + data[i].venue.country);
+					//Append data to log.txt
+					fs.appendFileSync("log.txt", "Location: " + data[i].venue.city + ", " + data[i].venue.country + "\n", function (error) {
+						if (error) {
+							console.log(error);
+						};
+					});
+
+				} else {
+					console.log("Location: " + data[i].venue.city + ", " + data[i].venue.region + ", " + data[i].venue.country);
+					//Append data to log.txt
+					fs.appendFileSync("log.txt", "Location: " + data[i].venue.city + ", " + data[i].venue.region + ", " + data[i].venue.country + "\n", function (error) {
+						if (error) {
+							console.log(error);
+						};
+					});
+				}
+
+				//Get date of show
+				var date = data[i].datetime;
+				date = moment(date).format("MM/DD/YYYY");
+				console.log("Date: " + date)
+				//Append data to log.txt
+				fs.appendFileSync("log.txt", "Date: " + date + "\n----------------\n", function (error) {
+					if (error) {
+						console.log(error);
+					};
+				});
+				console.log("----------------")
+			}
 		}
-	);
-}
+	});
+};
+
 // spotifySong will retrieve information on a song from Spotify
 function spotifySong(song) {
 	// Append the command to the log file
@@ -51,8 +95,8 @@ function spotifySong(song) {
 		search = song;
 	}
 
-	spotify.search({ type: 'track', query: search}, function(error, data) {
-	    if (error) {
+	spotify.search({ type: 'track', query: search }, function (error, data) {
+		if (error) {
 			var errorStr1 = 'ERROR: Retrieving Spotify track -- ' + error;
 
 			// Append the error string to the log file
@@ -61,7 +105,7 @@ function spotifySong(song) {
 				console.log(errorStr1);
 			});
 			return;
-	    } else {
+		} else {
 			var songInfo = data.tracks.items[0];
 			if (!songInfo) {
 				var errorStr2 = 'ERROR: No song info retrieved, please check the spelling of the song name!';
@@ -74,13 +118,13 @@ function spotifySong(song) {
 				return;
 			} else {
 				// Pretty print the song information
-				var outputStr = '------------------------\n' + 
-								'Song Information:\n' + 
-								'------------------------\n\n' + 
-								'Song Name: ' + songInfo.name + '\n'+ 
-								'Artist: ' + songInfo.artists[0].name + '\n' + 
-								'Album: ' + songInfo.album.name + '\n' + 
-								'Preview Here: ' + songInfo.preview_url + '\n';
+				var outputStr = '------------------------\n' +
+					'Song Information:\n' +
+					'------------------------\n\n' +
+					'Song Name: ' + songInfo.name + '\n' +
+					'Artist: ' + songInfo.artists[0].name + '\n' +
+					'Album: ' + songInfo.album.name + '\n' +
+					'Preview Here: ' + songInfo.preview_url + '\n';
 
 				// Append the output to the log file
 				fs.appendFile('./log.txt', 'LIRI Response:\n\n' + outputStr + '\n', (err) => {
@@ -88,7 +132,7 @@ function spotifySong(song) {
 					console.log(outputStr);
 				});
 			}
-	    }
+		}
 	});
 }
 
@@ -115,7 +159,7 @@ function retrieveOBDBInfo(movie) {
 
 	// Send the request to OMDB
 	request(queryStr, function (error, response, body) {
-		if ( error || (response.statusCode !== 200) ) {
+		if (error || (response.statusCode !== 200)) {
 			var errorStr1 = 'ERROR: Retrieving OMDB entry -- ' + error;
 
 			// Append the error string to the log file
@@ -136,19 +180,19 @@ function retrieveOBDBInfo(movie) {
 				});
 				return;
 			} else {
-		    	// Pretty print the movie information
-		    	var outputStr = '------------------------\n' + 
-								'Movie Information:\n' + 
-								'------------------------\n\n' +
-								'Movie Title: ' + data.Title + '\n' + 
-								'Year Released: ' + data.Released + '\n' +
-								'IMBD Rating: ' + data.imdbRating + '\n' +
-								'Country Produced: ' + data.Country + '\n' +
-								'Language: ' + data.Language + '\n' +
-								'Plot: ' + data.Plot + '\n' +
-								'Actors: ' + data.Actors + '\n' + 
-								'Rotten Tomatoes Rating: ' + data.tomatoRating + '\n' +
-								'Rotten Tomatoes URL: ' + data.tomatoURL + '\n';
+				// Pretty print the movie information
+				var outputStr = '------------------------\n' +
+					'Movie Information:\n' +
+					'------------------------\n\n' +
+					'Movie Title: ' + data.Title + '\n' +
+					'Year Released: ' + data.Released + '\n' +
+					'IMBD Rating: ' + data.imdbRating + '\n' +
+					'Country Produced: ' + data.Country + '\n' +
+					'Language: ' + data.Language + '\n' +
+					'Plot: ' + data.Plot + '\n' +
+					'Actors: ' + data.Actors + '\n' +
+					'Rotten Tomatoes Rating: ' + data.tomatoRating + '\n' +
+					'Rotten Tomatoes URL: ' + data.tomatoURL + '\n';
 
 				// Append the output to the log file
 				fs.appendFile('./log.txt', 'LIRI Response:\n\n' + outputStr + '\n', (err) => {
@@ -178,7 +222,7 @@ function doWhatItSays() {
 			var command = cmdString[0].trim();
 			var param = cmdString[1].trim();
 
-			switch(command) {
+			switch (command) {
 
 				case 'spotify-this-song':
 					spotifySong(param);
@@ -194,7 +238,7 @@ function doWhatItSays() {
 
 // Determine which LIRI command is being requested by the user
 if (liriCommand === 'concert-this') {
-	concertThis(liriArg); 
+	concertThis(liriArg);
 
 } else if (liriCommand === `spotify-this-song`) {
 	spotifySong(liriArg);
@@ -202,7 +246,7 @@ if (liriCommand === 'concert-this') {
 } else if (liriCommand === `movie-this`) {
 	retrieveOBDBInfo(liriArg);
 
-} else if (liriCommand ===  `do-what-it-says`) {
+} else if (liriCommand === `do-what-it-says`) {
 	doWhatItSays();
 
 } else {
@@ -212,11 +256,11 @@ if (liriCommand === 'concert-this') {
 
 		// If the user types in a command that LIRI does not recognize, output the Usage menu 
 		// which lists the available commands.
-		outputStr = 'Usage:\n' + 
-				   '    node liri.js concert-this "<band_name>"\n' + 
-				   '    node liri.js spotify-this-song "<song_name>"\n' + 
-				   '    node liri.js movie-this "<movie_name>"\n' + 
-				   '    node liri.js do-what-it-says\n';
+		outputStr = 'Usage:\n' +
+			'    node liri.js concert-this "<band_name>"\n' +
+			'    node liri.js spotify-this-song "<song_name>"\n' +
+			'    node liri.js movie-this "<movie_name>"\n' +
+			'    node liri.js do-what-it-says\n';
 
 		// Append the output to the log file
 		fs.appendFile('./log.txt', 'LIRI Response:\n\n' + outputStr + '\n', (err) => {
@@ -232,12 +276,12 @@ if (liriCommand === 'concert-this') {
 // 		// Name of the venue 
 // 		console.log(response.data.venue);
 // 		// Venue location
-		
+
 // 		// Date of the Event (use moment to format this as "MM/DD/YYYY")
-	
+
 // 	}
 // );
- 
+
 // spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
 // 	// Artist(s)
 // 	// The song's name
@@ -246,7 +290,7 @@ if (liriCommand === 'concert-this') {
 //   if (err) {
 //     return console.log('Error occurred: ' + err);
 //   }
- 
+
 // console.log(data); 
 // });
 

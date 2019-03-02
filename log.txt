@@ -129,3 +129,179 @@ User Command: node liri.js concert-this maroon 5
 
 User Command: node liri.js concert-this maroon 5 
 
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song Stand by You 
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Stand By You
+Artist: Rachel Platten
+Album: Wildfire
+Preview Here: https://p.scdn.co/mp3-preview/42ae0e6a35961e8655bf78bd432d96ebf1d5e84d?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: node liri.js movie-this The Matrix 
+
+LIRI Response:
+
+------------------------
+Movie Information:
+------------------------
+
+Movie Title: The Matrix
+Year Released: 31 Mar 1999
+IMBD Rating: 8.7
+Country Produced: USA
+Language: English
+Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
+Actors: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+
+User Command: node liri.js concert-this adele 
+
+User Command: node liri.js concert-this Adele 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this Adele 
+
+User Command: node liri.js concert-this Adele 
+
+User Command: node liri.js concert-this Adele 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js concert-this MAROON 5 
+
+User Command: node liri.js spotify-this-song Stand by You 
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Stand By You
+Artist: Rachel Platten
+Album: Wildfire
+Preview Here: https://p.scdn.co/mp3-preview/42ae0e6a35961e8655bf78bd432d96ebf1d5e84d?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js concert-this <band_name> 
+
+User Command: node liri.js concert-this Skrillex 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: node liri.js concert-this maroon 5 
+
+User Command: C:\Program Files\nodejs\node.exe,C:\Users\anime\Desktop\code\week10\liri-node-app\liri.js
+
+LIRI Response:
+
+Usage:
+    node liri.js concert-this "<band_name>"
+    node liri.js spotify-this-song "<song_name>"
+    node liri.js movie-this "<movie_name>"
+    node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song Stand By You 
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Stand By You
+Artist: Rachel Platten
+Album: Wildfire
+Preview Here: https://p.scdn.co/mp3-preview/42ae0e6a35961e8655bf78bd432d96ebf1d5e84d?cid=b862cb200bd24d5884cea0e170455b1d
+
+User Command: node liri.js movie-this The Notebook 
+
+LIRI Response:
+
+------------------------
+Movie Information:
+------------------------
+
+Movie Title: The Notebook
+Year Released: 25 Jun 2004
+IMBD Rating: 7.9
+Country Produced: USA
+Language: English
+Plot: A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.
+Actors: Tim Ivey, Gena Rowlands, Starletta DuPois, James Garner
+Rotten Tomatoes Rating: undefined
+Rotten Tomatoes URL: undefined
+
+User Command: node liri.js do-what-it-says
+
+User Command: node liri.js spotify-this-song "Stand By You"
+
+LIRI Response:
+
+------------------------
+Song Information:
+------------------------
+
+Song Name: Stand By You
+Artist: Rachel Platten
+Album: Wildfire
+Preview Here: https://p.scdn.co/mp3-preview/42ae0e6a35961e8655bf78bd432d96ebf1d5e84d?cid=b862cb200bd24d5884cea0e170455b1d
+
