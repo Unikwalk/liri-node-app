@@ -14,7 +14,7 @@ LIRI searches Spotify for songs, Bands in Town for concerts, and OMDB for movies
 In addition to logging the data to the terminal/bash window, the data is outputed to a .txt file called log.txt.
 
 
-##### Bands In Town
+#### Bands In Town
 
 `node liri.js concert-this <artist/band name here>`
 
@@ -23,7 +23,7 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
 
-##### Spotify
+#### Spotify
 
 `node liri.js spotify-this-song '<song name here>`
 
@@ -36,7 +36,7 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 ![spotify-this-song](spotify-this-song.JPG)
 
 
-##### Movie
+#### Movie
 
 `node liri.js movie-this '<movie name here>`
 
@@ -53,11 +53,11 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 ![movie-thi](movie-this.JPG)
 
 
-##### Do-What-It-Says
+#### Do-What-It-Says
 
 `node liri.js do-what-it-says`
 
-* It runs spotify-this-song for "I Want it That Way," as follows the text in random.txt.
+* It runs spotify-this-song for the song stored as the text in random.txt.
 
 ![do-what-it-says](do-what-it-says.JPG)
 
@@ -66,8 +66,9 @@ In addition to logging the data to the terminal/bash window, the data is outpute
 ### TECHNOLOGIES USED
 
 * Node.js
-* NPM packages (Bandsintown, Axios, FS, Spotify, OMDB, Moment)
 * Javacript
+* Axios
+* NPM packages (Bandsintown, Axios, FS, Spotify, OMDB, Moment)
 * API (bandsintown, spotify, OMDB)
 
 
