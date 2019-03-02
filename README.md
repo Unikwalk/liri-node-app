@@ -4,9 +4,9 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 ### PROJECT DESCRIPTION
 
 LIRI searches Spotify for songs, Bands in Town for concerts, and OMDB for movies using user's input via the following command lines:
-* `node liri.js concert-this <artist/band name here>`
-* `node liri.js spotify-this-song '<song name here>`
-* `node liri.js movie-this '<movie name here>`
+* `node liri.js concert-this "<artist/band name here>"`
+* `node liri.js spotify-this-song "<song name here>"`
+* `node liri.js movie-this "<movie name here>"`
 * `node liri.js do-what-it-says`
 
 ![User Command Lines](userCommandLines.JPG)
@@ -14,18 +14,18 @@ LIRI searches Spotify for songs, Bands in Town for concerts, and OMDB for movies
 In addition to logging the data to the terminal/bash window, the data is outputed to a .txt file called log.txt.
 
 
-#### Bands In Town
+##### BANDS IN TOWN
 
-`node liri.js concert-this <artist/band name here>`
+`node liri.js concert-this "<artist/band name here>"`
 
 * Name of the venue
 * Venue location
 * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
 
-#### Spotify
+##### SPOTIFY
 
-`node liri.js spotify-this-song '<song name here>`
+`node liri.js spotify-this-song "<song name here>"`
 
 * Artist(s)
 * The song's name
@@ -39,9 +39,9 @@ With a Song Title
 Without a Song Title
 ![spotify-this-song2](spotify-this-song2.JPG)
 
-#### Movie
+##### MOVIE
 
-`node liri.js movie-this '<movie name here>`
+`node liri.js movie-this "<movie name here>"`
 
 * Title of the movie.
 * Year the movie came out.
@@ -59,7 +59,7 @@ With a Movie Title
 Without a Movie Title
 ![movie-this2](movie-this2.JPG)
 
-#### Do-What-It-Says
+##### DO-WHAT-IT-SAYS
 
 `node liri.js do-what-it-says`
 
@@ -75,7 +75,7 @@ Without a Movie Title
 * Javacript
 * Axios
 * NPM packages (Bandsintown, Axios, FS, Spotify, OMDB, Moment)
-* API (bandsintown, spotify, OMDB)
+* API (Bandsintown, Spotify, OMDB)
 
 
 
